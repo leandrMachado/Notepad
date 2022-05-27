@@ -1,0 +1,15 @@
+<div class="hero-conteiner">
+    <nav>
+        <div class="hero-title" routerLink="/notepad"> Create Notes</div>
+        <div class="options">
+            <div class="create-note" (click)="saveNote()" >Save Note</div>
+            <div class="logout" routerLink="/notepad" >Back</div>
+        </div>
+    </nav>
+    <div class="hero-body">
+        <div class="paper">
+            <input type="text" placeholder="Untiled" class="note-title" [(ngModel)]="title">
+            <textarea cols="30" rows="10"  class="note-body" [(ngModel)]="message"></textarea>
+        </div>
+    </div>
+</div>

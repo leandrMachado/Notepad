@@ -1,0 +1,26 @@
+.options{
+    position: absolute;
+    display: flex;
+    right: 120px;
+}
+
+.logout{
+    cursor: pointer;
+    transition: all 1s;
+    margin-left: 30px;
+}
+
+.logout:hover{
+    text-decoration: underline;
+    color: #ff5c7c;
+}
+
+.create-note{
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.create-note:hover{
+    text-decoration: underline;
+    color: #bdecb6;
+}

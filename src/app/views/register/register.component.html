@@ -1,0 +1,32 @@
+<div class="hero-conteiner">
+    <nav>
+        <div class="hero-title" routerLink="login"># Notepad</div>
+    </nav>
+    <div class="hero-body">
+        <div>
+            <h3>Welcome to Notepad</h3>
+            <br>
+            <p>Register</p>
+            <br>
+            <div class="input-login">
+                <p>username</p>
+                <div class="input">
+                    <input type="email" [(ngModel)]="username">
+                </div>
+                <br>
+                <p>work email</p>
+                <div class="input">
+                    <input type="email" [(ngModel)]="email">
+                </div>
+                <br>
+                <p>password</p>
+                <div class="input">
+                    <input type="password" [(ngModel)]="password">
+                </div>
+            </div>
+            <br>
+            <div class="login-button" (click)="generateAcount()"><p>Register</p></div>
+            <div class="error" *ngIf="error">Error: email or password</div>
+        </div>
+    </div>
+</div>
