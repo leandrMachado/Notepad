@@ -114,3 +114,17 @@ input{
 textarea{
     font-family: 'Patua One', cursive;
 }
+
+
+@media only screen and (min-width: 200px) and (max-width: 1050px){
+    .hero-title{
+        margin-left: 35px;
+    }
+    .options{
+        right: 30px;
+    }
+    .paper{
+        width: 85%;
+        height: 80%;
+    }
+}
