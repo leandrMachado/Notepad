@@ -19,7 +19,6 @@ export class NotepadComponent implements OnInit {
   constructor(private localmanager: LocalstorageService  ,private router: Router) { }
 
   ngOnInit(): void {
-    if(localStorage.getItem('currentNote') != null) this.router.navigate(['/note'])
     this.acountUser = this.localmanager.getAcount(this.currentAcount).username
     this.getNotes = this.localmanager.getNotes(this.localmanager.getAcount(this.currentAcount).id)
   }
