@@ -6,7 +6,9 @@
             <div class="logout" (click)="endSession()" >Log out</div>
         </div>
     </nav>
-    <div class="hero-body">
-        
+    <div class="hero-body-note">
+        <div class="note-body" (click)="openNote(note.id)" *ngFor="let note of getNotes">
+            <div class="note-title"># {{note.message}}</div>
+        </div>
     </div>
 </div>

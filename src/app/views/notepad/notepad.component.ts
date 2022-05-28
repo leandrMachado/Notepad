@@ -13,14 +13,18 @@ export class NotepadComponent implements OnInit {
 
   currentAcount: string = String(localStorage.getItem('currentAcount'))
   acountUser: string = ''
-  arrayNote: Notes[] = []
+  getNotes: any = ''
+  noteId: any = ''
 
   constructor(private localmanager: LocalstorageService  ,private router: Router) { }
 
   ngOnInit(): void {
     this.acountUser = this.localmanager.getAcount(this.currentAcount).username
-    console.log(this.localmanager.getNotes(this.localmanager.getAcount(this.currentAcount).id))
+    this.getNotes = this.localmanager.getNotes(this.localmanager.getAcount(this.currentAcount).id)
+  }
 
+  openNote(noteId: string){
+    this.localmanager.loadNote(noteId)
   }
 
   endSession(){

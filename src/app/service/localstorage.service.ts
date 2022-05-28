@@ -63,15 +63,38 @@ export class LocalstorageService {
     localStorage.setItem('notes', JSON.stringify(this.notes))
     this.router.navigate(['/notepad'])
   }
-
+  
   getNotes(acountId: string){
     var returnNotes: string[] = []
     for(let i = 0; i < this.notes.length; i++){
       if(this.notes[i].acountId === acountId) {
-        returnNotes.push(JSON.stringify(this.notes[i]))
+        var note: any = this.notes[i]
+        returnNotes.push(note)
       }
     }
     return  returnNotes
+  }
+
+  getNote(noteId: string){
+    var returnNote: string[] = []
+    for(let i = 0; i < this.notes.length; i++){
+      if(this.notes[i].id == Number(noteId)) {
+        var note: any = this.notes[i]
+        returnNote.push(note)
+      }
+    }
+
+    return returnNote
+  }
+
+  loadNote(noteId: string){
+    localStorage.setItem('currentNote', noteId)
+    location.href = '/note'
+  }
+
+  logOutNote(){
+    localStorage.removeItem('currentNote')
+    this.router.navigate(['/notepad'])
   }
 
 }
